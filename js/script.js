@@ -1,9 +1,10 @@
 const comandaDiv = document.getElementById("comanda");
 const totalDiv = document.getElementById("total");
 
-let pedidos = [];
+const select = document.getElementById("opcoes");
+const quantidade = document.getElementById("qtd");
 
-let valor = 3.00;
+
 
 let x = 1;
 
@@ -13,30 +14,41 @@ let total = 0;
 
 function adicionar()
 {
-
-
-    comandaDiv.innerHTML += `<li>Item ${x} R$${valor.toFixed(2)}</li>`;
-
-    pedidos.push(valor.toFixed(2));
-
-
-
-    for(contagem = x-1;contagem < x;contagem++)
+    if(select.value != "")
     {
 
-        total = total + valor;
+        const selecionada = select.options[select.selectedIndex];
+
+        const nome = selecionada.dataset.name;
+        const preco = selecionada.dataset.price;
 
 
-            console.log(x);
 
-        console.log(valor);
+        comandaDiv.innerHTML += `<li>${nome} R$${preco}   qtd:${quantidade.value}</li>`;
+
+
+
+        for(contagem = x-1;contagem < x;contagem++)
+        {
+
+            total = total + parseFloat(preco) * quantidade.value;
+
+
+
+        }
+
+        totalDiv.innerHTML = `Total da comanda: R$${total.toFixed(2)}`;
+
+    
+
+        x += 1;
+
+        select.value = "";
     }
-
-    totalDiv.innerHTML = `Total da comanda: R$${total}`;
-
-    valor += 1.00;
-
-    x += 1;
+    else
+    {
+        alert("Escolha uma opção!");
+    }
 }
 
 
