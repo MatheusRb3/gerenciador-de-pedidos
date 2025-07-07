@@ -4,19 +4,60 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Admin</title>
+        <link rel="stylesheet" href="css/estilo.css">
     </head>
     <body>
-        <div id="container">
-            <h1>Admin gerenciador de cardápio</h1>
-            <br>
-            <input type="text" id="nome_produto" value="">
-            <input type="number" id="valor_produto" value="">
-            <button type="submit" id="button_add">Adicionar Item</button>
+          <header>
+      <img src="logo.png" alt="Logo do restaurante" />
+      <h1>Admin gerenciador de cardápio</h1>
+      <input type="text" id="search" placeholder="Pesquisar item..." oninput="filtrarItens()" />
+    </header>
 
-            <div id="lista_itens">
-                <ul></ul>
-            </div>
+    <div id="container">
+      <div class="categoria">
+        <h2>Pizzas</h2>
+        <div class="item">
+          <strong>Pizza Margherita - R$ 35,00</strong>
+          <select>
+            <option disabled selected>Número da mesa</option>
+            <option value="1">Mesa 1</option>
+            <option value="2">Mesa 2</option>
+            <option value="3">Mesa 3</option>
+          </select>
+          <input type="number" min="1" max="99" value="1" placeholder="Quantidade" />
+          <textarea placeholder="Observações (ex: sem cebola)"></textarea>
+          <button>Adicionar à comanda</button>
         </div>
+        <div class="item">
+          <strong>Pizza Calabresa - R$ 38,00</strong>
+          <select>
+            <option disabled selected>Número da mesa</option>
+            <option value="1">Mesa 1</option>
+            <option value="2">Mesa 2</option>
+            <option value="3">Mesa 3</option>
+          </select>
+          <input type="number" min="1" max="99" value="1" placeholder="Quantidade" />
+          <textarea placeholder="Observações"></textarea>
+          <button>Adicionar à comanda</button>
+        </div>
+      </div>
+
+      <div class="categoria">
+        <h2>Bebidas</h2>
+        <div class="item">
+          <strong>Refrigerante Lata - R$ 6,00</strong>
+          <select>
+            <option disabled selected>Número da mesa</option>
+            <option value="1">Mesa 1</option>
+            <option value="2">Mesa 2</option>
+            <option value="3">Mesa 3</option>
+          </select>
+          <input type="number" min="1" max="99" value="1" placeholder="Quantidade" />
+          <textarea placeholder="Observações"></textarea>
+          <button>Adicionar à comanda</button>
+        </div>
+      </div>
+    </div>
 
         <script src="js/script.js"> </script>
     </body>

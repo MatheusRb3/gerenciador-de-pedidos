@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Admin - Cadastro de Mesas, Categorias e Itens</title>
+<link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+<header>
+  <img src="logo.png" alt="Logo do restaurante" />
+  <h1>Admin gerenciador de cardápio</h1>
+  <div></div>
+</header>
+
+<h1>Administração do Cardápio</h1>
+
+<!-- Formulário de Mesas -->
+<section>
+  <h2>Adicionar Mesa</h2>
+  <form id="formMesa">
+    <label for="numeroMesa">Número da Mesa</label>
+    <input type="number" id="numeroMesa" min="1" required />
+    <button type="submit">Adicionar Mesa</button>
+  </form>
+  <div class="lista">
+    <h3>Mesas cadastradas</h3>
+    <ul id="listaMesas"></ul>
+  </div>
+</section>
+
+<!-- Formulário de Categorias -->
+<section>
+  <h2>Adicionar Categoria</h2>
+  <form id="formCategoria">
+    <label for="nomeCategoria">Nome da Categoria</label>
+    <input type="text" id="nomeCategoria" required />
+    <button type="submit">Adicionar Categoria</button>
+  </form>
+  <div class="lista">
+    <h3>Categorias cadastradas</h3>
+    <ul id="listaCategorias"></ul>
+  </div>
+</section>
+
+<!-- Formulário de Itens -->
+<section>
+  <h2>Adicionar Item</h2>
+  <form id="formItem">
+    <label for="nomeItem">Nome do Item</label>
+    <input type="text" id="nomeItem" required />
+    <label for="precoItem">Preço (R$)</label>
+    <input type="number" id="precoItem" step="0.01" min="0" required />
+    <label for="categoriaItem">Categoria</label>
+    <select id="categoriaItem" required>
+      <option value="" disabled selected>Selecione uma categoria</option>
+    </select>
+    <button type="submit">Adicionar Item</button>
+  </form>
+  <div class="lista">
+    <h3>Itens cadastrados</h3>
+    <ul id="listaItens"></ul>
+  </div>
+</section>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
