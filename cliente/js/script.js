@@ -3,6 +3,8 @@ const totalDiv = document.getElementById("total");
 
 let pedidos = [];
 
+let itens = ['pizza', 'misto', 'café', 'agua'];
+
 let valor = 3.00;
 
 let x = 1;
@@ -15,7 +17,7 @@ function adicionar()
 {
 
 
-    comandaDiv.innerHTML += `<li>Item ${x} R$${valor.toFixed(2)}</li>`;
+    comandaDiv.innerHTML += `<li>${itens[x-1]} R$${valor.toFixed(2)}   qtd: 1</li>`;
 
     pedidos.push(valor.toFixed(2));
 
