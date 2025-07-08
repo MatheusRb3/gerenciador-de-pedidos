@@ -4,22 +4,39 @@
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Gerenciador de comandas</title>
+            <link rel="stylesheet" href="css/estilo.css">
         </head>
         <body>
-            <div id="container">
-                <h1>Gerenciador de comandas</h1>
+    <header>
+    <h1>Bem-vindo ao Cardápio Digital</h1>
+    <button id="btnHistorico" onclick="toggleHistorico()">Ver Histórico</button>
+  </header>
+  <main>
+    <section class="section" id="qrSection">
+      <h2>Escanear QR Code</h2>
+      <p>Use a câmera do seu celular para escanear o QR code da mesa.</p>
+      <button onclick="abrirCamera()">Escanear QR Code</button>
+      <div id="reader"></div>
+    </section>
 
-                <button onclick="adicionar()">Adicionar Item</button>
+    <section class="section" id="comandaSection">
+      <h2>Comanda em andamento</h2>
+      <ul id="comandaAtual">
+        <li>Item 1 - R$10,00</li>
+        <li>Item 2 - R$18,00</li>
+      </ul>
+      <p><strong>Total:</strong> R$28,00</p>
+    </section>
 
-                <h3>Mesa x</h3>
-                <div id="comanda">
-                <ul>
-                </ul>
-                </div>
-                <div id="total">
-                    
-                </div>
-            </div>
+    <section class="section" id="historicoSection" style="display: none;">
+      <h2>Histórico de Comandas</h2>
+      <ul id="historicoComandas">
+        <li><strong>Restaurante A</strong> - 02/07/2025 - Total: R$45,00</li>
+        <li><strong>Restaurante B</strong> - 29/06/2025 - Total: R$32,50</li>
+      </ul>
+    </section>
+  </main>
+  <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
             <script src="js/script.js"></script>
         </body>
     </html>
